@@ -1,0 +1,4 @@
+name: CoordinateObfuscator
+version: '1.0-SNAPSHOT'
+main: com.iliashdz.coordinateObfuscator.CoordinateObfuscator
+api-version: '1.21'
