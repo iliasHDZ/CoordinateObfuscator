@@ -18,13 +18,8 @@ class CoordinateOffset(val x: Int, val z: Int) {
         }
     }
 
-    fun getChunkX(): Int {
-        return x * (COORDINATE_SCALE / 16)
-    }
-
-    fun getChunkZ(): Int {
-        return z * (COORDINATE_SCALE / 16)
-    }
+    val chunkX get(): Int = x * (COORDINATE_SCALE / 16)
+    val chunkZ get(): Int = z * (COORDINATE_SCALE / 16)
 
     fun mask(x: Double, y: Double, z: Double): Triple<Double, Double, Double> {
         return Triple(
@@ -60,15 +55,15 @@ class CoordinateOffset(val x: Int, val z: Int) {
 
     fun maskChunk(v: ChunkCoordIntPair): ChunkCoordIntPair {
         return ChunkCoordIntPair(
-            v.chunkX + getChunkX(),
-            v.chunkZ + getChunkZ()
+            v.chunkX + chunkX,
+            v.chunkZ + chunkZ
         )
     }
 
     fun unmaskChunk(v: ChunkCoordIntPair): ChunkCoordIntPair {
         return ChunkCoordIntPair(
-            v.chunkX - getChunkX(),
-            v.chunkZ - getChunkZ()
+            v.chunkX - chunkX,
+            v.chunkZ - chunkZ
         )
     }
 }
