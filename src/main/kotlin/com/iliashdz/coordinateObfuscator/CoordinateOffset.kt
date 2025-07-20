@@ -4,10 +4,7 @@ import com.comphenix.protocol.wrappers.BlockPosition
 import com.comphenix.protocol.wrappers.ChunkCoordIntPair
 import java.util.Random
 
-class CoordinateOffset(x: Int, z: Int) {
-    var x: Int = x
-    var z: Int = z
-
+class CoordinateOffset(val x: Int, val z: Int) {
     companion object {
         const val COORDINATE_SCALE = 256
         const val OFFSET_LIMIT_FACTOR = 1024
